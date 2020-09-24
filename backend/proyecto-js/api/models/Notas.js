@@ -24,7 +24,14 @@ module.exports = {
       model: 'Usuario',//modelo con el cual relacionamos
       required: true, //Requerido 1 - N
       //false //opcional 0-N por defecto
-    }
+    },
+    //relaciones
+    // Notas- Curso
+    curso:{ //nombre fk
+      model: 'Curso',//modelo con el cual relacionamos
+      required: true, //Requerido 1 - N
+      //false //opcional 0-N por defecto
+    },
 
   },
 };

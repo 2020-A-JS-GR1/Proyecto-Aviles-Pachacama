@@ -15,8 +15,12 @@ module.exports = {
       unique: true, // Por defecto es false
       minLength: 10,
       maxLength: 25
-    }
-
-
+    },
+    //relaciones
+    //materia-curso
+    materias:{//uno a muchos(nombre en plural)
+      collection:'Curso',//modelo a relacionarse
+      via: 'materia' //Nombre atributo fk en el modelo relacional
+    },
   },
 };

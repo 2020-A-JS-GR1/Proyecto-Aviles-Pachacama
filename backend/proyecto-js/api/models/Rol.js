@@ -12,9 +12,13 @@ module.exports = {
       type: 'string',
       required: true, // Por defecto es false
       unique: true, // Por defecto es false
-    }
-
-
+    },
+    //relaciones
+    //rol-usuario
+    roles:{//uno a muchos(nombre en plural)
+      collection:'Usuario',//modelo a relacionarse
+      via: 'rol' //Nombre atributo fk en el modelo relacional
+    },
   },
 };
 

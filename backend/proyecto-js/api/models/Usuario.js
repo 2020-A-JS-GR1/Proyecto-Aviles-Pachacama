@@ -35,10 +35,23 @@ module.exports = {
       required: true
     },
     //relaciones
+    // Rol- Usuario
+    rol:{ //nombre fk
+      model: 'Rol',//modelo con el cual relacionamos
+      required: true, //Requerido 1 - N
+      //false //opcional 0-N por defecto
+    },
+    //relaciones
     //usuario-Notas
     notas:{//uno a muchos(nombre en plural)
       collection:'Notas',//modelo a relacionarse
       via: 'usuario' //Nombre atributo fk en el modelo relacional
-    }
+    },
+    //relaciones
+    //usuario-curso
+    cursos:{//uno a muchos(nombre en plural)
+      collection:'Curso',//modelo a relacionarse
+      via: 'usuario' //Nombre atributo fk en el modelo relacional
+    },
   },
 };
