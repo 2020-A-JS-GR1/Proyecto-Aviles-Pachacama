@@ -1,0 +1,20 @@
+
+<table >
+  <tr>
+    <th> ID</th>
+    <th> Nombre</th>
+    <th> Cedula</th>
+    <th> Acciones</th>
+  </tr>
+  <tr *ngIf="mostrarFormulario">
+    <td> {{usuario?.id}}</td>
+    <td> {{usuario.nombre}}</td>
+    <td> {{usuario.direccion}}</td>
+    <td>
+      <button (click)="irAEditarUsuario(usuario.id)">
+        Editar
+      </button>
+    </td>
+  </tr>
+</table>
+

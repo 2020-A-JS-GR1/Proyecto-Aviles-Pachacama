@@ -1,0 +1,15 @@
+
+
+<div *ngIf="mostrarFormulario">
+  <app-formulario-usuario
+    [nombreInput]="usuario.nombre"
+    [direccioInput]="usuario.direccion"
+    [telefonoInput]="usuario.telefono"
+    [correoInput]="usuario.correo"
+    [contraseniaInput]="usuario.contrasenia"
+    [rolInput]="usuario.rol.id"
+    (informacionValidada)="editarUsuario($event)"
+  >
+
+  </app-formulario-usuario>
+</div>

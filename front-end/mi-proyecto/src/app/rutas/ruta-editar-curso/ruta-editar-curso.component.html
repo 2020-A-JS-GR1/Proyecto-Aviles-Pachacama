@@ -1,0 +1,12 @@
+
+<div *ngIf="mostrarFormulario">
+  <app-formulario-curso
+    [nombreInput]="curso.nombrecurso"
+    [fechaIniInput]="curso.fechainicio"
+    [fechaFinInput]="curso.fechafin"
+    [materiaInput]="curso.materia.id"
+    (informacionValidada)="editarCurso($event)"
+  >
+
+  </app-formulario-curso>
+</div>

@@ -1,0 +1,13 @@
+<p>Nombre: {{nota.usuario.nombre}}</p>
+<p>Nombre Curso: {{nota.curso.nombrecurso}}</p>
+
+<div *ngIf="mostrarFormulario">
+  <app-formulario-notas
+    [calificacionInput]="nota.calificaciones"
+    [obserInput]="nota.observaciones"
+    (informacionValidada)="editarNotas($event)"
+  >
+
+  </app-formulario-notas>
+</div>
+

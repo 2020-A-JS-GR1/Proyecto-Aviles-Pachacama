@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
     calificaciones:{ // nombre atributo
       type: 'number',
-      required: true, // Por defecto es false
+      required: false, // Por defecto es false
     },
     observaciones:{
       type: 'string',

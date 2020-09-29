@@ -1,0 +1,32 @@
+<p>Lista de Notas de Cursos</p>
+
+<label for="busquedaId">Busqueda</label>
+<input id="busquedaId" name="busqueda" type="text" [(ngModel)]="busquedaModelo">
+<button (click)="filtrarArregloCurso()">Buscar</button>
+
+<table>
+  <tr>
+    <th> ID</th>
+    <th> Alumno</th>
+    <th> Nombre Curso</th>
+    <th> Calificacion</th>
+    <th> Observaciones</th>
+    <th> Acciones</th>
+
+
+  </tr>
+  <tr *ngFor="let curso of usuariosInscritos">
+    <td> {{curso.id}}</td>
+    <td> {{curso.usuario.nombre}}</td>
+    <td> {{curso.curso.nombrecurso}}</td>
+    <td> {{curso.calificaciones}}</td>
+    <td> {{curso.observaciones}}</td>
+    <td>
+      <button (click)="irAEditarCurso(curso.id)">
+        Editar
+      </button>
+    </td>
+
+  </tr>
+
+</table>

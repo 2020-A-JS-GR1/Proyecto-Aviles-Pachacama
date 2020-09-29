@@ -1,0 +1,84 @@
+<form #formularioCurso="ngForm"
+      (ngSubmit)="crearUsuario(formularioCurso)"
+>
+
+  <div>
+    <label for="nombrecuId">Nombre Curso</label>
+    <input
+      id="nombrecuId"
+      type="text"
+      name="nombrecurso"
+      [(ngModel)]="nombreModelo"
+      required
+      minlength="10"
+      maxlength="25"
+      #nombreCampo="ngModel"
+    >
+    <div *ngIf="nombreCampo.touched&& nombreCampo.errors">
+      <p *ngIf="nombreCampo.errors.required">Error:Campo requerrido</p>
+      <p *ngIf="nombreCampo.errors.minlength">Error:La longitud minima es de 10 caracteres</p>
+      <p *ngIf="nombreCampo.errors.maxlength">Error:La longitud maxima es de 25 caracteres</p>
+    </div>
+  </div>
+
+
+
+  <div>
+    <label for="fechainiId">Fecha de Inicio</label>
+    <input id="fechainiId"
+           type="date"
+           name="fechainicio"
+           value="2020-10-09"
+           min="2020-09-29"
+           max="2021-12-31"
+           [(ngModel)]="fechaIniModelo"
+           required
+           #fechaIniCampo="ngModel"
+    >
+    <div *ngIf="fechaIniCampo.touched&& fechaIniCampo.errors">
+      <p *ngIf="fechaIniCampo.errors.required">Error:Campo requerrido</p>
+      <p *ngIf="fechaIniCampo.errors.minlength">Error:La fecha minima es 2020-09-29</p>
+    </div>
+  </div>
+
+  <div>
+    <label for="fechafinId">Fecha de Fin</label>
+    <input id="fechafinId"
+           type="date"
+           name="fechafin"
+           value="2020-10-09"
+           min="2020-09-29"
+           max="2021-12-31"
+           [(ngModel)]="fechafinModelo"
+           required
+           #fechafinCampo="ngModel"
+    >
+    <div *ngIf="fechafinCampo.touched&& fechafinCampo.errors">
+      <p *ngIf="fechafinCampo.errors.required">Error:Campo requerrido</p>
+      <p *ngIf="fechafinCampo.errors.minlength">Error:La fecha minima es 2020-09-29</p>
+    </div>
+  </div>
+
+
+  <div >
+    <label for="materiaId">Materia </label>
+    <select name="materia" id="materiaId" [(ngModel)]="materiaModelo"
+    >
+      <option *ngFor="let materia of arregloMaterias" value="{{materia.id}}"> {{materia.nombremateria}}</option>
+    </select>
+  </div>
+
+
+  <button type="button" (click)="ayuda()">
+    Boton(ayuda)
+  </button>
+  <button type="submit" [disabled]="!formularioCurso.form.valid">
+    Submit
+  </button>
+  <button type="reset">
+    Reset
+  </button>
+  <button>
+    Defecto
+  </button>
+</form>

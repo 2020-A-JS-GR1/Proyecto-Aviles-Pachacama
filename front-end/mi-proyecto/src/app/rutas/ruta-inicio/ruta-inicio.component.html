@@ -1,0 +1,13 @@
+<table>
+  <td *ngIf="!_authService.estaAutenticado">
+    <a [routerLink]="['/inicio','registro']">
+      Registrarse
+    </a>
+  </td>
+  <td *ngIf="!_authService.estaAutenticado">
+    <a [routerLink]="['/inicio','login']">
+      Ir Login
+    </a>
+  </td>
+</table>
+<router-outlet *ngIf="!_authService.estaAutenticado"></router-outlet>

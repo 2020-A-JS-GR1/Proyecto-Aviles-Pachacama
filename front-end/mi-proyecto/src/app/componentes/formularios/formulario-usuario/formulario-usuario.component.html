@@ -1,0 +1,110 @@
+<form #formularioUsuario="ngForm"
+      (ngSubmit)="crearUsuario(formularioUsuario)"
+>
+  <div>
+    <label for="nombreId">Nombre</label>
+    <input
+      id="nombreId"
+      type="text"
+      name="nombre"
+      [(ngModel)]="nombreModelo"
+      required
+      minlength="10"
+      maxlength="25"
+      #nombreCampo="ngModel"
+    >
+    <div *ngIf="nombreCampo.touched&& nombreCampo.errors">
+      <p *ngIf="nombreCampo.errors.required">Error:Campo requerrido</p>
+      <p *ngIf="nombreCampo.errors.minlength">Error:La longitud minima es de 10 caracteres</p>
+      <p *ngIf="nombreCampo.errors.maxlength">Error:La longitud maxima es de 25 caracteres</p>
+    </div>
+  </div>
+
+  <div>
+    <label for="direccionId">Direccion</label>
+    <input
+      id="direccionId"
+      type="text"
+      name="direccion"
+      [(ngModel)]="direccionModelo"
+      required
+      minlength="25"
+      #direccionCampo="ngModel"
+    >
+    <div *ngIf="direccionCampo.touched&& direccionCampo.errors">
+      <p *ngIf="direccionCampo.errors.required">Error:Campo requerrido</p>
+      <p *ngIf="direccionCampo.errors.minlength">Error:La longitud minima es de 25 caractere</p>
+    </div>
+  </div>
+
+  <div>
+    <label for="telefonoId">Telefono</label>
+    <input id="telefonoId"
+           type="text"
+           name="telefono"
+           minlength="10"
+           [(ngModel)]="telefonoModelo"
+           required
+           #telefonoCampo="ngModel"
+    >
+    <div *ngIf="telefonoCampo.touched&& telefonoCampo.errors">
+      <p *ngIf="telefonoCampo.errors.required">Error:Campo requerrido</p>
+      <p *ngIf="telefonoCampo.errors.minlength">Error:La longitud minima es de 10 caractere</p>
+    </div>
+  </div>
+
+  <div>
+    <label for="correoId">Correo Electronico</label>
+    <input id="correoId"
+           type="text"
+           name="correo"
+           [(ngModel)]="correoModelo"
+           required
+           #correoCampo="ngModel"
+    >
+    <div *ngIf="correoCampo.touched&& correoCampo.errors">
+      <p *ngIf="correoCampo.errors.required">Error:Campo requerrido</p>
+      <p *ngIf="correoCampo.errors.type">Error:Solo se aceptan correos</p>
+    </div>
+  </div>
+
+  <div>
+    <label for="contraseniaId">Contrasenia</label>
+    <input id="contraseniaId"
+           type="text"
+           name="contrasenia"
+           minlength="8"
+           [(ngModel)]="contraseniaModelo"
+           required
+           #contraseniaCampo="ngModel"
+    >
+    <div *ngIf="contraseniaCampo.touched&& contraseniaCampo.errors">
+      <p *ngIf="contraseniaCampo.errors.required">Error:Campo requerrido</p>
+      <p *ngIf="contraseniaCampo.errors.minlength">Error:La longitud minima es de 8 caractere</p>
+    </div>
+  </div>
+
+  <div>
+    <label for="rolId">Rol </label>
+    <select name="rol" id="rolId" [(ngModel)]="rolModelo"
+    >
+      <option value="1"> Administrador</option>
+      <option value="2"> Profesor</option>
+      <option value="3"> Estudiante</option>
+    </select>
+  </div>
+
+
+  <button type="button" (click)="ayuda()">
+    Boton(ayuda)
+  </button>
+  <button type="submit" [disabled]="!formularioUsuario.form.valid">
+    Submit
+  </button>
+  <button type="reset">
+    Reset
+  </button>
+  <button>
+    Defecto
+  </button>
+</form>
