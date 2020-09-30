@@ -51,6 +51,10 @@ export class RutaDetalleUsuarioComponent implements OnInit {
 
 
   irALogin() {
+    this._authService.estaAutenticado=false;
+    this._authService.esAdmin = false;
+    this._authService.esProfe = false;
+    this._authService.esEstu= false;
     const ruta = ['/inicio']
     // /usuario/editar/1
     this._router.navigate(ruta);

@@ -48,19 +48,10 @@ export class RutaListaCursoComponent implements OnInit {
 
   filtrarArregloCurso() {
     const consulta = {
-      or: [
-        {
           nombrecurso: {
             contains: this.busquedaModelo
           }
-        },
-        {
-          nombremateria: {
-            contains: this.busquedaModelo
-          }
         }
-      ]
-    }
     const consultaString = 'where=' + JSON.stringify(consulta);
 
     const onservableTraerTodos = this._cursoService.traerTodosCurso(
