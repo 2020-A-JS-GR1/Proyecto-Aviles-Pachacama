@@ -1,0 +1,17 @@
+
+<table *ngIf="_authService.esAdmin">
+  <td >
+    <a class="boton" [routerLink]="['/usuario', 'lista']">
+      Lista usuarios
+    </a>
+  </td>
+  <td >
+    <a class="boton" [routerLink]="['/usuario', 'crear']">
+      Crear Usuario
+    </a>
+  </td>
+</table>
+<router-outlet></router-outlet>
+
+
+

@@ -1,0 +1,27 @@
+
+<div>
+  <div *ngIf="mostrarFormulario">
+    <p class="titulo"> Nombre</p>
+    <p class="subtitulo"> {{usuario.nombre}}</p>
+    <p class="titulo"> Direccion</p>
+    <p class="subtitulo"> {{usuario.direccion}}</p>
+    <p class="titulo"> Telefono</p>
+    <p class="subtitulo"> {{usuario.telefono}}</p>
+    <p class="titulo"> Correo</p>
+    <p class="subtitulo"> {{usuario.correo}}</p>
+  </div>
+    <table>
+      <tr>
+        <td>
+          <button class="boton" (click)="irAEditarUsuario(usuario.id)">
+            Editar
+          </button>
+          <button class="boton" (click)="irALogin()">
+            Cerrar sesion
+          </button>
+        </td>
+      </tr>
+    </table>
+    <p>
+
+</div>

@@ -1,0 +1,17 @@
+
+
+<router-outlet>
+  <table>
+    <td *ngIf="_authService.estaAutenticado">
+      <a class="btn btn-secondary"[routerLink]="['curso']">
+        Curso
+      </a>
+    </td>
+    <td *ngIf="_authService.estaAutenticado" >
+      <a class="btn btn-secondary"[routerLink]="['usuario']">
+        Perfil
+      </a>
+    </td>
+  </table>
+</router-outlet>
+

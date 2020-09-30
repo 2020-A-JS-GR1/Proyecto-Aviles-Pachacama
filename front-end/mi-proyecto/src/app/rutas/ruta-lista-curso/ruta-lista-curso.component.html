@@ -1,0 +1,38 @@
+<div *ngIf="_authService.esAdmin || _authService.esEstu">
+  <h4>Lista de Cursos</h4>
+
+  <label for="busquedaId">Busqueda</label>
+  <input id="busquedaId" name="busqueda" type="text" [(ngModel)]="busquedaModelo">
+  <button class="boton" (click)="filtrarArregloCurso()">Buscar</button>
+
+  <table>
+    <tr>
+      <th> ID</th>
+      <th> Profesor del Curso</th>
+      <th> Nombre Curso</th>
+      <th> Materia</th>
+      <th> Fecha Inicio</th>
+      <th> Fecha Fin</th>
+      <th> Acciones</th>
+    </tr>
+    <tr *ngFor="let curso of arregloCursos">
+      <td> {{curso.id}}</td>
+      <td> {{curso.usuario.nombre}}</td>
+      <td> {{curso.nombrecurso}}</td>
+      <td> {{curso.materia.nombremateria}}</td>
+      <td> {{curso.fechainicio}}</td>
+      <td> {{curso.fechafin}}</td>
+      <td>
+        <button class="boton" *ngIf="_authService.esAdmin" (click)="irAEditarcurso(curso.id)">
+          Editar
+        </button>
+        <button class="boton" *ngIf="_authService.esAdmin" (click)="eliminarCurso(curso.id)">
+          Eliminar
+        </button>
+        <button class="boton" *ngIf="_authService.esEstu" (click)="registrarCurso(curso.id)">
+          Registrarse
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,48 @@
+
+<form #formularioCurso="ngForm"
+      (ngSubmit)="crearUsuario(formularioCurso)"
+>
+  <div>
+    <label for="calificacionId">Calificacion</label>
+    <input
+      id="calificacionId"
+      type="text"
+      name="calificaciones"
+      [(ngModel)]="calificacionModelo"
+      required
+      minlength="1"
+      maxlength="2"
+      #calificacionCampo="ngModel"
+    >
+    <div *ngIf="calificacionCampo.touched&& calificacionCampo.errors">
+      <p *ngIf="calificacionCampo.errors.required">Error:Campo requerrido</p>
+      <p *ngIf="calificacionCampo.errors.minlength">Error:La longitud minima es de 10 caracteres</p>
+      <p *ngIf="calificacionCampo.errors.maxlength">Error:La longitud maxima es de 25 caracteres</p>
+    </div>
+  </div>
+
+  <div>
+    <label for="obsId">Observaciones</label>
+    <input
+      id="obsId"
+      type="text"
+      name="observaciones"
+      [(ngModel)]="observacionesModelo"
+      minlength="25"
+      #obserCampo="ngModel"
+    >
+    <div *ngIf="obserCampo.touched&& obserCampo.errors">
+      <p *ngIf="obserCampo.errors.minlength">Error:La longitud minima es de 25 caracteres</p>
+    </div>
+  </div>
+
+
+  <button class="boton" type="submit" [disabled]="!formularioCurso.form.valid">
+    Editar
+  </button>
+  <button class="boton" type="reset">
+    Borrar
+  </button>
+
+</form>
+

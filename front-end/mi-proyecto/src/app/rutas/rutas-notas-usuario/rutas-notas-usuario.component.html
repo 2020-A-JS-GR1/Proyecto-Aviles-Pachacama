@@ -1,0 +1,26 @@
+<h4>Lista de Notas de Cursos</h4>
+
+<label for="busquedaId">Busqueda</label>
+<input id="busquedaId" name="busqueda" type="text" [(ngModel)]="busquedaModelo">
+<button class="boton" (click)="filtrarArregloCurso()">Buscar</button>
+
+<table>
+  <tr>
+    <th> ID</th>
+    <th> Alumno</th>
+    <th> Nombre Curso</th>
+    <th> Calificacion</th>
+    <th> Observaciones</th>
+
+
+  </tr>
+  <tr *ngFor="let curso of arregloCursos">
+    <td> {{curso.id}}</td>
+    <td> {{curso.usuario.nombre}}</td>
+    <td> {{curso.curso.nombrecurso}}</td>
+    <td> {{curso.calificaciones}}</td>
+    <td> {{curso.observaciones}}</td>
+
+
+  </tr>
+</table>
