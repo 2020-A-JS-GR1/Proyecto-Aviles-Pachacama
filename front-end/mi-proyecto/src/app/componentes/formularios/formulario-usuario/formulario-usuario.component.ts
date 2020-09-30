@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
+
 @Component({
   selector: 'app-formulario-usuario',
   templateUrl: './formulario-usuario.component.html',
@@ -34,7 +35,8 @@ export class FormularioUsuarioComponent implements OnInit {
   rolModelo: string;
   telefonoModelo: string;
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
     if(this.nombreInput && this.direccioInput && this.telefonoInput && this.correoInput && this.contraseniaInput && this.rolInput){

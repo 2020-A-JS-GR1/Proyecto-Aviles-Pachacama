@@ -1,1 +1,35 @@
-<p>formulario-materia works!</p>
+<form #formularioUsuario="ngForm"
+      (ngSubmit)="crearMateria(formularioUsuario)"
+>
+  <div>
+    <label for="nombremaId">Nombre Materia</label>
+    <input
+      id="nombremaId"
+      type="text"
+      name="nombremateria"
+      [(ngModel)]="nombremaModelo"
+      required
+      minlength="10"
+      maxlength="25"
+      #nombremaCampo="ngModel"
+    >
+    <div *ngIf="nombremaCampo.touched&& nombremaCampo.errors">
+      <p *ngIf="nombremaCampo.errors.required">Error:Campo requerrido</p>
+      <p *ngIf="nombremaCampo.errors.minlength">Error:La longitud minima es de 10 caracteres</p>
+      <p *ngIf="nombremaCampo.errors.maxlength">Error:La longitud maxima es de 25 caracteres</p>
+    </div>
+  </div>
+
+  <button type="button" (click)="ayuda()">
+    Boton(ayuda)
+  </button>
+  <button type="submit" [disabled]="!formularioUsuario.form.valid">
+    Submit
+  </button>
+  <button type="reset">
+    Reset
+  </button>
+  <button>
+    Defecto
+  </button>
+</form>

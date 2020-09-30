@@ -4,12 +4,17 @@ import {HttpClient} from "@angular/common/http";
 @Injectable()
 export class AuthService {
   estaAutenticado = false;
+  esAdmin = false;
+  esProfe = false;
+  esEstu = false;
   usuariologin='';
   usuariorol='';
+
   url = 'http://localhost:1337';
   roles=[
     'Administrador',
-    'Supervisor'
+    'Profesor',
+    'Estudiante'
   ]
   constructor(
     private readonly _httpClient: HttpClient

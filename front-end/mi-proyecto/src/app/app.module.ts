@@ -28,6 +28,7 @@ import { FormularioNotasComponent } from './componentes/formularios/formulario-n
 import { FormularioMateriaComponent } from './componentes/formularios/formulario-materia/formulario-materia.component';
 import { RutasNotasUsuarioComponent } from './rutas/rutas-notas-usuario/rutas-notas-usuario.component';
 import { RutaEditarNotasComponent } from './rutas/ruta-editar-notas/ruta-editar-notas.component';
+import { RutaCrearMateriaComponent } from './rutas/ruta-crear-materia/ruta-crear-materia.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +51,7 @@ import { RutaEditarNotasComponent } from './rutas/ruta-editar-notas/ruta-editar-
     FormularioMateriaComponent,
     RutasNotasUsuarioComponent,
     RutaEditarNotasComponent,
+    RutaCrearMateriaComponent,
   ],
   imports: [
     BrowserModule,

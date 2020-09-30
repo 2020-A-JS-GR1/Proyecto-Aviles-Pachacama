@@ -15,6 +15,11 @@ import {RutaDetalleCursoComponent} from "./rutas/ruta-detalle-curso/ruta-detalle
 import {RutaNotasCursoComponent} from "./rutas/ruta-notas-curso/ruta-notas-curso.component";
 import {RutasNotasUsuarioComponent} from "./rutas/rutas-notas-usuario/rutas-notas-usuario.component";
 import {RutaEditarNotasComponent} from "./rutas/ruta-editar-notas/ruta-editar-notas.component";
+import {EstaLogeadoGuard} from "./servicios/guards/esta-logeado.guard";
+import {EsAdministradorGuard} from "./servicios/guards/es-administrador.guard";
+import {EsProfesorGuard} from "./servicios/guards/es-profesor.guard";
+import {EsEstudianteGuard} from "./servicios/guards/es-estudiante.guard";
+import {RutaCrearMateriaComponent} from "./rutas/ruta-crear-materia/ruta-crear-materia.component";
 
 const routes: Routes = [
   {
@@ -34,37 +39,36 @@ const routes: Routes = [
   {
     component: RutaUsuarioComponent,
     path: 'usuario',
-    /*canActivate:[
-      EstaLogeadoGuard
-    ],*/
+    canActivate:[
+      //EstaLogeadoGuard
+    ],
     children: [
       {
         path: 'crear',
         component: RutaCrearUsuarioComponent
-        /*,canActivate:[
-          EsSupervisorGuard
+        ,/*canActivate:[
+          EsAdministradorGuard
         ]*/
       },
       {
         path:'editar/:id',
         component: RutaEditarUsuarioComponent,
-        /*canActivate:[
-          EsAdministradorGuard
-        ]*/
+        // canActivate:[
+        //   EsAdministradorGuard,
+        //   EstaLogeadoGuard,
+        //   EsProfesorGuard,
+        //   EsEstudianteGuard
+        // ]
       },
       {
         path:'lista',
         component: RutaListaUsuarioComponent,
-        /*canActivate:[
-          EsAdministradorGuard
-        ]*/
+
       },
       {
         path:'detalle',
         component: RutaDetalleUsuarioComponent,
-        /*canActivate:[
-          EsAdministradorGuard
-        ]*/
+
       },
       {
         path:'',
@@ -76,6 +80,9 @@ const routes: Routes = [
   {
     path: 'curso',
     component: RutaCursoComponent,
+    canActivate:[
+     // EstaLogeadoGuard
+    ],
     children:[
       {
         path: 'listacu',
@@ -87,44 +94,37 @@ const routes: Routes = [
       {
         path: 'crearcu',
         component: RutaCrearCursoComponent
-        /*,canActivate:[
-          EsSupervisorGuard
-        ]*/
+
       },
       {
         path: 'editarcu/:id',
         component: RutaEditarCursoComponent
-        /*,canActivate:[
-          EsSupervisorGuard
-        ]*/
+
       },
       {
         path: 'detallecu',
         component: RutaDetalleCursoComponent
-        /*,canActivate:[
-          EsSupervisorGuard
-        ]*/
+
       },
       {
         path: 'notascu/:id',
         component: RutaNotasCursoComponent
-        /*,canActivate:[
-          EsSupervisorGuard
-        ]*/
+
       },
       {
         path: 'notas',
         component: RutasNotasUsuarioComponent
-        /*,canActivate:[
-          EsSupervisorGuard
-        ]*/
+
+      },
+      {
+        path: 'materia',
+        component: RutaCrearMateriaComponent
+
       },
       {
         path: 'editarno/:id',
         component: RutaEditarNotasComponent
-        /*,canActivate:[
-          EsSupervisorGuard
-        ]*/
+
       },
       {
         path:'',

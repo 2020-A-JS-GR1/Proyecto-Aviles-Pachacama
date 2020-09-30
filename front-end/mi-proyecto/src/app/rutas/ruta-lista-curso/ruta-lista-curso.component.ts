@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UsuarioService} from "../../servicios/http/usuario.service";
 import {Router} from "@angular/router";
 import {CursoService} from "../../servicios/http/curso.service";
+import {AuthService} from "../../servicios/auth/auth.service";
 
 @Component({
   selector: 'app-ruta-lista-curso',
@@ -15,7 +16,8 @@ export class RutaListaCursoComponent implements OnInit {
 
   constructor( //inyecta dependencias
     private readonly _cursoService: CursoService,
-    private readonly  _router: Router
+    private readonly  _router: Router,
+    readonly  _authService: AuthService
   ) {
 
   }
@@ -76,5 +78,25 @@ export class RutaListaCursoComponent implements OnInit {
 
   ngOnInit(): void {
     this.filtrarArregloCurso();
+  }
+
+  registrarCurso(curso:number) {
+    const usuario:number = Number(this._authService.usuariologin);
+    const consulta = {
+      "usuario": usuario,
+      "curso": curso
+      }
+    const consultaString = JSON.stringify(consulta);
+   const obsregistro = this._cursoService.registrarCursos(consultaString);
+   obsregistro
+     .subscribe(
+       (datos: Object)=>{
+         const url = ['/curso','notas']
+         this._router.navigate(url);
+       },
+       (error)=>{
+         console.error('Error', error);
+       }
+     )
   }
 }

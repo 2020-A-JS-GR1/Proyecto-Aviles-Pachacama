@@ -35,6 +35,8 @@ export class RutaDetalleUsuarioComponent implements OnInit {
   }
   ngOnInit(): void {
     console.log(this.id)
+    console.log(this._authService.usuariorol)
+
     this.filtrarUsuario();
   }
   llenarFormularioConDatosDeUsuario(){
@@ -48,4 +50,9 @@ export class RutaDetalleUsuarioComponent implements OnInit {
   }
 
 
+  irALogin() {
+    const ruta = ['/inicio']
+    // /usuario/editar/1
+    this._router.navigate(ruta);
+  }
 }

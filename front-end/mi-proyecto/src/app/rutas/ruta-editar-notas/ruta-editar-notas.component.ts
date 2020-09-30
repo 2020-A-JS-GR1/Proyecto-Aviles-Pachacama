@@ -10,6 +10,7 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
 export class RutaEditarNotasComponent implements OnInit {
 
   nota;
+  idcurso;
   mostrarFormulario = false;
   constructor(//inyectamos dependencias
     private  readonly _cursoService: CursoService,
@@ -28,6 +29,7 @@ export class RutaEditarNotasComponent implements OnInit {
             .subscribe(
               (nota: any) => {
                 this.nota = nota;
+                this.idcurso=nota.curso.id;
                 this.llenarFormularioConDatosDeNota()
               },
               (error) =>{
@@ -47,7 +49,7 @@ export class RutaEditarNotasComponent implements OnInit {
     obsEditarUsuario
       .subscribe(
         (datos:Object)=>{
-          const url = ['/curso','notascu',this.nota.id];
+          const url = ['/curso','notascu',this.idcurso];
           this._router.navigate(url);
 
         },

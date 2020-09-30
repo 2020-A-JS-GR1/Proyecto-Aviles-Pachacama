@@ -29,7 +29,18 @@ export class RutaLoginUsuarioComponent implements OnInit {
             for (const usuario of this.arregloUsuarios) {
               this._authService.usuariologin= usuario.id;
               this._authService.usuariorol= usuario.rol;
+
+              if(usuario.rol.tiporol === "Administrador"){
+                this._authService.esAdmin = true;
+              }
+              if(usuario.rol.tiporol === "Profesor"){
+                this._authService.esProfe = true;
+              }
+              if(usuario.rol.tiporol === "Estudiante"){
+                this._authService.esEstu = true;
+              }
             }
+
           }else{
             this._authService.estaAutenticado=false;
           }

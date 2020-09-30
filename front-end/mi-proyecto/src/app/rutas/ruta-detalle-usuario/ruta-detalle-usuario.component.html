@@ -3,16 +3,23 @@
   <tr>
     <th> ID</th>
     <th> Nombre</th>
-    <th> Cedula</th>
+    <th> Direccion</th>
+    <th> Telefono</th>
+    <th> Correo</th>
     <th> Acciones</th>
   </tr>
   <tr *ngIf="mostrarFormulario">
     <td> {{usuario?.id}}</td>
     <td> {{usuario.nombre}}</td>
     <td> {{usuario.direccion}}</td>
+    <td> {{usuario.telefono}}</td>
+    <td> {{usuario.correo}}</td>
     <td>
       <button (click)="irAEditarUsuario(usuario.id)">
         Editar
+      </button>
+      <button (click)="irALogin()">
+        Cerrar sesion
       </button>
     </td>
   </tr>

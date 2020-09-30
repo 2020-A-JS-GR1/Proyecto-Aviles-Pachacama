@@ -1,11 +1,13 @@
 import{Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
+import {AuthService} from "../auth/auth.service";
 @Injectable()
 export class CursoService {
   url='http://localhost:1337'
   //constructor
   constructor(
-    private readonly _httpClient:HttpClient
+    private readonly _httpClient:HttpClient,
+    private readonly _authService: AuthService
   ) {
   }
 
@@ -14,7 +16,12 @@ export class CursoService {
   }
 
   traerTodosCursosNotas(consulta?: string){
-    return this._httpClient.get(this.url+'/Notas?'+ consulta+'&sort=id%20ASC')
+
+    if(this._authService.esEstu){
+      const idUsuario:number = Number(this._authService.usuariologin);
+      return this._httpClient.get(this.url+'/Notas?usuario='+idUsuario+'&'+ consulta+'&sort=id%20ASC')
+    }
+
   }
 
   traerTodosNotasCurso(idCurso:number){
@@ -39,6 +46,19 @@ export class CursoService {
   crear(curso){
     return this._httpClient.post(
       this.url + '/Curso',
+      curso
+    )
+  }
+  crearMaterias(materia){
+    return this._httpClient.post(
+      this.url + '/Materia',
+      materia
+    )
+  }
+
+  registrarCursos(curso){
+    return this._httpClient.post(
+      this.url + '/Notas',
       curso
     )
   }
