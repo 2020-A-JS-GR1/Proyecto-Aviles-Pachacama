@@ -1,4 +1,4 @@
-<p>Cursos Creados</p>
+<h4>Cursos Creados</h4>
 
 <table>
   <tr>
@@ -8,6 +8,7 @@
     <th> Materia</th>
     <th> Fecha Inicio</th>
     <th> Fecha Fin</th>
+    <th> Acciones</th>
   </tr>
   <tr *ngFor="let curso of cursosInscritos">
     <td> {{curso.id}}</td>
@@ -17,13 +18,13 @@
     <td> {{curso.fechainicio}}</td>
     <td> {{curso.fechafin}}</td>
     <td>
-      <button (click)="irAEditarcurso(curso.id)">
+      <button  class="boton" (click)="irAEditarcurso(curso.id)">
         Editar
       </button>
-      <button (click)="calificarCurso(curso.id)">
+      <button class="boton" (click)="calificarCurso(curso.id)">
         Calificar
       </button>
-      <button (click)="eliminarCurso(curso.id)">
+      <button class="boton" (click)="eliminarCurso(curso.id)">
         Eliminar
       </button>
     </td>

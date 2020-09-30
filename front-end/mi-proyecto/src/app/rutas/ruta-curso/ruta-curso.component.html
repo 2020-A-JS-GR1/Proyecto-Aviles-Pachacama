@@ -1,21 +1,21 @@
 <table>
   <td *ngIf="_authService.esAdmin">
-    <a [routerLink]="['/curso', 'materia']">
+    <a  class="boton" [routerLink]="['/curso', 'materia']">
       Crear Materia
     </a>
   </td>
   <td *ngIf="_authService.esProfe">
-    <a [routerLink]="['/curso', 'crearcu']">
+    <a class="boton" [routerLink]="['/curso', 'crearcu']">
       Crear Curso
     </a>
   </td>
   <td *ngIf="_authService.esProfe" >
-    <a [routerLink]="['/curso', 'detallecu']">
-      lista por Curso
+    <a class="boton" [routerLink]="['/curso', 'detallecu']">
+      Lista por Curso
     </a>
   </td>
   <td *ngIf="_authService.esEstu">
-    <a [routerLink]="['/curso', 'notas']">
+    <a class="boton" [routerLink]="['/curso', 'notas']">
       Notas
     </a>
   </td>

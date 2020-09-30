@@ -1,8 +1,8 @@
-<p>Lista de Cursos</p>
+<h4>Lista de Cursos</h4>
 
 <label for="busquedaId">Busqueda</label>
 <input id="busquedaId" name="busqueda" type="text" [(ngModel)]="busquedaModelo">
-<button (click)="filtrarArregloUsuario()">Buscar</button>
+<button class="boton" (click)="filtrarArregloUsuario()">Buscar</button>
 
 <table>
   <tr>
@@ -13,6 +13,7 @@
     <th> Correo</th>
     <th> Contrasenia</th>
     <th> Rol</th>
+    <th> Acciones</th>
   </tr>
   <tr *ngFor="let usuario of arregloUsuarios">
     <td> {{usuario.id}}</td>
@@ -23,10 +24,10 @@
     <td> {{usuario.contrasenia}}</td>
     <td> {{usuario.rol.tiporol}}</td>
     <td>
-      <button (click)="irAEditarUsuario(usuario.id)">
+      <button class="boton" (click)="irAEditarUsuario(usuario.id)">
         Editar
       </button>
-      <button (click)="eliminarUsuario(usuario.id)">
+      <button class="boton" (click)="eliminarUsuario(usuario.id)">
         Eliminar
       </button>
     </td>

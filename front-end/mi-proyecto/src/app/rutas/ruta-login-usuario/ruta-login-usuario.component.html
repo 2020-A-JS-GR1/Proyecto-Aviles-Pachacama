@@ -1,13 +1,13 @@
 <form #formularioLogin="ngForm"
       (ngSubmit)="revisarLogin(formularioLogin)"
 >
-  <label for="correoId">Correo:</label>
+  <label  for="correoId">Correo:</label>
   <input id="correoId" name="correo" [(ngModel)]="correoModelo" type="text">
 
   <label for="contraseniaId">Contraseña:</label>
   <input id="contraseniaId" name="contrasenia" [(ngModel)]="contraseniaModelo" type="text">
 
-  <button>
+  <button class="boton">
     Ingresar
   </button>
 

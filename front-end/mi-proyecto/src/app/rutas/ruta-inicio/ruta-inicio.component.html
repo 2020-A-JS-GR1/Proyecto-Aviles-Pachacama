@@ -1,11 +1,11 @@
 <table>
-  <td *ngIf="!_authService.estaAutenticado">
-    <a [routerLink]="['/inicio','registro']">
+  <td *ngIf="!_authService.estaAutenticado" >
+    <a class="btn btn-primary" [routerLink]="['/inicio','registro']">
       Registrarse
     </a>
   </td>
   <td *ngIf="!_authService.estaAutenticado">
-    <a [routerLink]="['/inicio','login']">
+    <a class="btn btn-primary"[routerLink]="['/inicio','login']">
       Ir Login
     </a>
   </td>

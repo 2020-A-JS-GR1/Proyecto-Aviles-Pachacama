@@ -29,6 +29,7 @@ import { FormularioMateriaComponent } from './componentes/formularios/formulario
 import { RutasNotasUsuarioComponent } from './rutas/rutas-notas-usuario/rutas-notas-usuario.component';
 import { RutaEditarNotasComponent } from './rutas/ruta-editar-notas/ruta-editar-notas.component';
 import { RutaCrearMateriaComponent } from './rutas/ruta-crear-materia/ruta-crear-materia.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,7 @@ import { RutaCrearMateriaComponent } from './rutas/ruta-crear-materia/ruta-crear
     AppRoutingModule,
     HttpClientModule, //importa el HttpClient
     FormsModule, // permite funcionalidad de los formularios template
-    BrowserAnimationsModule,
+    BrowserAnimationsModule, NgbModule,
 
   ],
   providers: [

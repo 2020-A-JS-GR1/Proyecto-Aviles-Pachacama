@@ -1,0 +1,26 @@
+tr,td,th {
+  border: lightseagreen 3px solid;
+  padding: 10px 5px;
+  text-align: center;
+}
+table{
+  width: 75%;
+  margin-left: 15px;
+}
+h4{
+  color: #001c20;
+
+}
+
+.boton {
+  margin: 10px 5px;
+  background: brown;
+  border-radius: 35px;
+  border: none;
+  outline: none;
+  padding: 5px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: black;
+}
