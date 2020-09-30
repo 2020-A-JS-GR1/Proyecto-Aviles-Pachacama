@@ -5,10 +5,11 @@ tr,td,th {
 }
 table{
   width: 75%;
+  margin-left: 15px;
 }
 h4{
   color: #001c20;
-
+  margin-left: 15px;
 }
 label {
   display: inline-block;

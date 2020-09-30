@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {AuthService} from "../../../servicios/auth/auth.service";
 
 
 @Component({
@@ -36,6 +37,7 @@ export class FormularioUsuarioComponent implements OnInit {
   telefonoModelo: string;
 
   constructor(
+    readonly _authService: AuthService
   ) { }
 
   ngOnInit(): void {

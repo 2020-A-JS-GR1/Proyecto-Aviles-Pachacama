@@ -95,16 +95,13 @@
   </div>
 
 
-  <button type="button" (click)="ayuda()">
-    Boton(ayuda)
+  <button *ngIf="_authService.estaAutenticado" class="boton" type="submit" [disabled]="!formularioUsuario.form.valid">
+    Enviar
   </button>
-  <button type="submit" [disabled]="!formularioUsuario.form.valid">
-    Submit
+  <button *ngIf="!_authService.estaAutenticado" class="boton" type="submit" [disabled]="!formularioUsuario.form.valid">
+    Registrarse
   </button>
-  <button type="reset">
-    Reset
-  </button>
-  <button>
-    Defecto
+  <button class="boton" type="reset">
+    Cancelar
   </button>
 </form>

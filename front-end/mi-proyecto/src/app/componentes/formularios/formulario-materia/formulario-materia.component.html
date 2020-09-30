@@ -20,16 +20,12 @@
     </div>
   </div>
 
-  <button type="button" (click)="ayuda()">
-    Boton(ayuda)
+
+  <button class="boton" type="submit" [disabled]="!formularioUsuario.form.valid">
+    Crear
   </button>
-  <button type="submit" [disabled]="!formularioUsuario.form.valid">
-    Submit
+  <button class="boton" type="reset">
+    Limpiar
   </button>
-  <button type="reset">
-    Reset
-  </button>
-  <button>
-    Defecto
-  </button>
+
 </form>
