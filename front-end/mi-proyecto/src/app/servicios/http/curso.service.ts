@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {AuthService} from "../auth/auth.service";
 @Injectable()
 export class CursoService {
+  cursoId;
   url='http://localhost:1337'
   //constructor
   constructor(
@@ -15,11 +16,15 @@ export class CursoService {
     return this._httpClient.get(this.url+'/Curso?'+ consulta+'&sort=id%20ASC')
   }
 
-  traerTodosCursosNotas(consulta?: string){
+  traerTodosCursosNotas(consulta: string){
+
+      return this._httpClient.get(this.url+'/Notas?'+ consulta+'&sort=id%20ASC')
+  }
+  traerTodosCursosNotas2(){
 
     if(this._authService.esEstu){
       const idUsuario:number = Number(this._authService.usuariologin);
-      return this._httpClient.get(this.url+'/Notas?usuario='+idUsuario+'&'+ consulta+'&sort=id%20ASC')
+      return this._httpClient.get(this.url+'/Notas?usuario='+idUsuario+'&sort=id%20ASC')
     }
 
   }

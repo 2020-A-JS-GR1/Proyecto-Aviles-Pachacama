@@ -47,14 +47,12 @@ export class RutaListaUsuarioComponent implements OnInit {
 
   filtrarArregloUsuario() {
     const consulta = {
-      or: [
-        {
-          nombrecurso: {
+          nombre: {
             contains: this.busquedaModelo
           }
         }
-      ]
-    }
+
+
     const consultaString = 'where=' + JSON.stringify(consulta);
 
     const onservableTraerTodos = this._usuarioService.traerTodos(

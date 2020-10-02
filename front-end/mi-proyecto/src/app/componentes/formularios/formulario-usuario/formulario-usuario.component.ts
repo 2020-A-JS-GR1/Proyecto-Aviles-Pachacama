@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {AuthService} from "../../../servicios/auth/auth.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -37,7 +38,8 @@ export class FormularioUsuarioComponent implements OnInit {
   telefonoModelo: string;
 
   constructor(
-    readonly _authService: AuthService
+    readonly _authService: AuthService,
+    private readonly _router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -74,4 +76,10 @@ export class FormularioUsuarioComponent implements OnInit {
     alert('Ayuda')
   }
 
+  irALogin() {
+    const id: number= Number(this._authService.usuariologin);
+    const ruta = ['/usuario', 'detalle']
+    // /usuario/editar/1
+    this._router.navigate(ruta);
+  }
 }

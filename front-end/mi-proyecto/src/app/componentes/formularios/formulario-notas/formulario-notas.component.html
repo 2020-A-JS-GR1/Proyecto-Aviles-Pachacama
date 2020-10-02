@@ -15,9 +15,9 @@
       #calificacionCampo="ngModel"
     >
     <div *ngIf="calificacionCampo.touched&& calificacionCampo.errors">
-      <p *ngIf="calificacionCampo.errors.required">Error:Campo requerrido</p>
-      <p *ngIf="calificacionCampo.errors.minlength">Error:La longitud minima es de 10 caracteres</p>
-      <p *ngIf="calificacionCampo.errors.maxlength">Error:La longitud maxima es de 25 caracteres</p>
+      <p class="error" *ngIf="calificacionCampo.errors.required">Error:Campo requerrido</p>
+      <p class="error" *ngIf="calificacionCampo.errors.minlength">Error:La longitud minima es de 10 caracteres</p>
+      <p class="error" *ngIf="calificacionCampo.errors.maxlength">Error:La longitud maxima es de 25 caracteres</p>
     </div>
   </div>
 
@@ -32,7 +32,7 @@
       #obserCampo="ngModel"
     >
     <div *ngIf="obserCampo.touched&& obserCampo.errors">
-      <p *ngIf="obserCampo.errors.minlength">Error:La longitud minima es de 25 caracteres</p>
+      <p class="error" *ngIf="obserCampo.errors.minlength">Error:La longitud minima es de 25 caracteres</p>
     </div>
   </div>
 

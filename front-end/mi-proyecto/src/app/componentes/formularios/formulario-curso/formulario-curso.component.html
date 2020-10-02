@@ -14,10 +14,10 @@
       maxlength="25"
       #nombreCampo="ngModel"
     >
-    <div *ngIf="nombreCampo.touched&& nombreCampo.errors">
-      <p *ngIf="nombreCampo.errors.required">Error:Campo requerrido</p>
-      <p *ngIf="nombreCampo.errors.minlength">Error:La longitud minima es de 10 caracteres</p>
-      <p *ngIf="nombreCampo.errors.maxlength">Error:La longitud maxima es de 25 caracteres</p>
+    <div  *ngIf="nombreCampo.touched&& nombreCampo.errors">
+      <p class="error" *ngIf="nombreCampo.errors.required">Error:Campo requerrido</p>
+      <p class="error" *ngIf="nombreCampo.errors.minlength">Error:La longitud minima es de 10 caracteres</p>
+      <p class="error" *ngIf="nombreCampo.errors.maxlength">Error:La longitud maxima es de 25 caracteres</p>
     </div>
   </div>
 
@@ -36,8 +36,8 @@
            #fechaIniCampo="ngModel"
     >
     <div *ngIf="fechaIniCampo.touched&& fechaIniCampo.errors">
-      <p *ngIf="fechaIniCampo.errors.required">Error:Campo requerrido</p>
-      <p *ngIf="fechaIniCampo.errors.minlength">Error:La fecha minima es 2020-09-29</p>
+      <p class="error" *ngIf="fechaIniCampo.errors.required">Error:Campo requerrido</p>
+      <p  class="error" *ngIf="fechaIniCampo.errors.minlength">Error:La fecha minima es 2020-09-29</p>
     </div>
   </div>
 
@@ -53,19 +53,22 @@
            required
            #fechafinCampo="ngModel"
     >
-    <div *ngIf="fechafinCampo.touched&& fechafinCampo.errors">
-      <p *ngIf="fechafinCampo.errors.required">Error:Campo requerrido</p>
-      <p *ngIf="fechafinCampo.errors.minlength">Error:La fecha minima es 2020-09-29</p>
+    <div  *ngIf="fechafinCampo.touched&& fechafinCampo.errors">
+      <p class="error" *ngIf="fechafinCampo.errors.required">Error:Campo requerrido</p>
+      <p class="error" *ngIf="fechafinCampo.errors.minlength">Error:La fecha minima es 2020-09-29</p>
     </div>
   </div>
 
 
   <div >
     <label for="materiaId">Materia </label>
-    <select name="materia" id="materiaId" [(ngModel)]="materiaModelo"
+    <select name="materia" id="materiaId" [(ngModel)]="materiaModelo"  #materiaCampo="ngModel"  required
     >
-      <option *ngFor="let materia of arregloMaterias" value="{{materia.id}}"> {{materia.nombremateria}}</option>
+      <option  *ngFor="let materia of arregloMaterias" value="{{materia.id}}"> {{materia.nombremateria}}</option>
     </select>
+    <div  *ngIf="materiaCampo.touched&& materiaCampo.errors">
+      <p class="error" *ngIf="materiaCampo.errors.required">Error:Campo requerrido</p>
+    </div>
   </div>
 
 

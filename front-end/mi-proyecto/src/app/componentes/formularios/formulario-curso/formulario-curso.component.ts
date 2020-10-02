@@ -44,6 +44,7 @@ export class FormularioCursoComponent implements OnInit {
       this.materiaModelo = this.materiaInput
     }
   }
+
   crearUsuario(formulario){
     const materia = this.materiaModelo
     const esNumero = !Number.isNaN(Number(materia));

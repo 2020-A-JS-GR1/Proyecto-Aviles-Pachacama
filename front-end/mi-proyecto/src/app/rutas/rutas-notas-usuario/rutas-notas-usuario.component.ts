@@ -21,19 +21,57 @@ export class RutasNotasUsuarioComponent implements OnInit {
   ) { }
 
   filtrarArregloCurso() {
-    const consulta = {
-      or: [
-        {
+    if(this.busquedaModelo != ''){
+      const esNumero=!Number.isNaN(Number(this.busquedaModelo));
+      if(esNumero){
+        const consulta = {
+
+          calificaciones:  this.busquedaModelo
+          ,
+          usuario:this._authService.usuariologin
+        }
+        const consultaString = 'where=' + JSON.stringify(consulta);
+
+        const onservableTraerTodos = this._cursoService.traerTodosCursosNotas(consultaString);
+        onservableTraerTodos
+          .subscribe(
+            (cursos: any[]) => {
+              this.arregloCursos = cursos;
+            },
+            (error) => {
+              console.error('Error', error);
+            }
+          )
+      }else{
+        const consulta = {
+
           observaciones: {
             contains: this.busquedaModelo
-          }
+          },
+          usuario:this._authService.usuariologin
         }
-      ]
-    }
-    const consultaString = 'where=' + JSON.stringify(consulta);
+        const consultaString = 'where=' + JSON.stringify(consulta);
 
-    const onservableTraerTodos = this._cursoService.traerTodosCursosNotas(
-      this.busquedaModelo != '' ? consultaString : '');
+        const onservableTraerTodos = this._cursoService.traerTodosCursosNotas(consultaString);
+        onservableTraerTodos
+          .subscribe(
+            (cursos: any[]) => {
+              this.arregloCursos = cursos;
+            },
+            (error) => {
+              console.error('Error', error);
+            }
+          )
+      }
+    } else{
+      this.traernotasEstudiante()
+    }
+
+
+
+  }
+  traernotasEstudiante(){
+    const onservableTraerTodos = this._cursoService.traerTodosCursosNotas2();
     onservableTraerTodos
       .subscribe(
         (cursos: any[]) => {
@@ -43,8 +81,6 @@ export class RutasNotasUsuarioComponent implements OnInit {
           console.error('Error', error);
         }
       )
-
-
   }
 
 

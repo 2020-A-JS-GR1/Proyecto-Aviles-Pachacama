@@ -59,7 +59,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     HttpClientModule, //importa el HttpClient
     FormsModule, // permite funcionalidad de los formularios template
-    BrowserAnimationsModule, NgbModule,
+    BrowserAnimationsModule,
+    NgbModule,
 
   ],
   providers: [

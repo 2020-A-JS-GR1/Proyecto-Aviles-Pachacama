@@ -28,23 +28,61 @@ export class RutaNotasCursoComponent implements OnInit {
   }
 
   filtrarArregloCurso(){
-    const consulta = {
-      or: [
-        {
+
+    if(this.busquedaModelo!= ''){
+      const esNumero = !Number.isNaN(Number(this.busquedaModelo))
+
+      if(esNumero){
+        const consulta = {
+          calificaciones: this.busquedaModelo,
+          curso: this._cursoService.cursoId
+        }
+        const consultaString ='where='+ JSON.stringify(consulta);
+
+        const onservableTraerTodos = this._cursoService.traerTodosCursosNotas(consultaString);
+        onservableTraerTodos
+          .subscribe(
+            (cursos: any[]) => {
+              this.usuariosInscritos = cursos;
+
+            },
+            (error) => {
+              console.error('Error', error);
+            }
+          )
+      }else{
+        const consulta = {
           observaciones: {
             contains: this.busquedaModelo
-          }
+          },
+          curso: this._cursoService.cursoId
         }
-      ]
-    }
-    const consultaString = 'where=' + JSON.stringify(consulta);
+        const consultaString ='where='+ JSON.stringify(consulta);
 
-    const onservableTraerTodos = this._cursoService.traerTodosCursosNotas(
-      this.busquedaModelo != '' ? consultaString : '');
+        const onservableTraerTodos = this._cursoService.traerTodosCursosNotas(consultaString);
+        onservableTraerTodos
+          .subscribe(
+            (cursos: any[]) => {
+              this.usuariosInscritos = cursos;
+
+            },
+            (error) => {
+              console.error('Error', error);
+            }
+          )
+      }
+
+    }else{
+      this.traerCursoid()
+    }
+
+  }
+  traerCursoid(){
+    const onservableTraerTodos = this._cursoService.traerTodosNotasCurso(Number(this._cursoService.cursoId));
     onservableTraerTodos
       .subscribe(
         (cursos: any[]) => {
-          this.arregloCursos = cursos;
+          this.usuariosInscritos = cursos;
         },
         (error) => {
           console.error('Error', error);
@@ -62,17 +100,8 @@ export class RutaNotasCursoComponent implements OnInit {
       .subscribe(
         (parametros:Params)=>{//try
           const id= Number(parametros.id);
-          const obsUsuario = this._cursoService.traerTodosNotasCurso(id);
-          obsUsuario
-            .subscribe(
-              (usuario: any[]) => {
-                this.usuariosInscritos = usuario;
-                this.llenarFormularioConDatosDeUsuario()
-              },
-              (error) =>{
-                console.error('Error', error);
-              }
-            )
+          this._cursoService.cursoId = id;
+          this.filtrarArregloCurso();
         }
       )
   }
