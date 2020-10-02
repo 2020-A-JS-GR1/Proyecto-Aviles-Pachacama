@@ -14,9 +14,9 @@
       #nombremaCampo="ngModel"
     >
     <div *ngIf="nombremaCampo.touched&& nombremaCampo.errors">
-      <p *ngIf="nombremaCampo.errors.required">Error:Campo requerrido</p>
-      <p *ngIf="nombremaCampo.errors.minlength">Error:La longitud minima es de 10 caracteres</p>
-      <p *ngIf="nombremaCampo.errors.maxlength">Error:La longitud maxima es de 25 caracteres</p>
+      <p class="error" *ngIf="nombremaCampo.errors.required">Error:Campo requerrido</p>
+      <p class="error" *ngIf="nombremaCampo.errors.minlength">Error:La longitud minima es de 10 caracteres</p>
+      <p class="error" *ngIf="nombremaCampo.errors.maxlength">Error:La longitud maxima es de 25 caracteres</p>
     </div>
   </div>
 

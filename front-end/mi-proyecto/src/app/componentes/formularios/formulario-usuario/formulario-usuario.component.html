@@ -14,9 +14,9 @@
       #nombreCampo="ngModel"
     >
     <div *ngIf="nombreCampo.touched&& nombreCampo.errors">
-      <p *ngIf="nombreCampo.errors.required">Error:Campo requerrido</p>
-      <p *ngIf="nombreCampo.errors.minlength">Error:La longitud minima es de 10 caracteres</p>
-      <p *ngIf="nombreCampo.errors.maxlength">Error:La longitud maxima es de 25 caracteres</p>
+      <p class="error" *ngIf="nombreCampo.errors.required">Error:Campo requerido</p>
+      <p class="error" *ngIf="nombreCampo.errors.minlength">Error:La longitud minima es de 10 caracteres</p>
+      <p class="error" *ngIf="nombreCampo.errors.maxlength">Error:La longitud maxima es de 25 caracteres</p>
     </div>
   </div>
 
@@ -32,8 +32,8 @@
       #direccionCampo="ngModel"
     >
     <div *ngIf="direccionCampo.touched&& direccionCampo.errors">
-      <p *ngIf="direccionCampo.errors.required">Error:Campo requerrido</p>
-      <p *ngIf="direccionCampo.errors.minlength">Error:La longitud minima es de 25 caractere</p>
+      <p class="error" *ngIf="direccionCampo.errors.required">Error:Campo requerido</p>
+      <p class="error" *ngIf="direccionCampo.errors.minlength">Error:La longitud minima es de 25 caractere</p>
     </div>
   </div>
 
@@ -48,8 +48,8 @@
            #telefonoCampo="ngModel"
     >
     <div *ngIf="telefonoCampo.touched&& telefonoCampo.errors">
-      <p *ngIf="telefonoCampo.errors.required">Error:Campo requerrido</p>
-      <p *ngIf="telefonoCampo.errors.minlength">Error:La longitud minima es de 10 caractere</p>
+      <p class="error" *ngIf="telefonoCampo.errors.required">Error:Campo requerido</p>
+      <p class="error" *ngIf="telefonoCampo.errors.minlength">Error:La longitud minima es de 10 caractere</p>
     </div>
   </div>
 
@@ -63,15 +63,15 @@
            #correoCampo="ngModel"
     >
     <div *ngIf="correoCampo.touched&& correoCampo.errors">
-      <p *ngIf="correoCampo.errors.required">Error:Campo requerrido</p>
-      <p *ngIf="correoCampo.errors.type">Error:Solo se aceptan correos</p>
+      <p class="error" *ngIf="correoCampo.errors.required">Error:Campo requerido</p>
+      <p class="error" *ngIf="correoCampo.errors.type">Error:Solo se aceptan correos</p>
     </div>
   </div>
 
   <div>
     <label for="contraseniaId">Contrasenia</label>
     <input id="contraseniaId"
-           type="text"
+           type="password"
            name="contrasenia"
            minlength="8"
            [(ngModel)]="contraseniaModelo"
@@ -79,19 +79,22 @@
            #contraseniaCampo="ngModel"
     >
     <div *ngIf="contraseniaCampo.touched&& contraseniaCampo.errors">
-      <p *ngIf="contraseniaCampo.errors.required">Error:Campo requerrido</p>
-      <p *ngIf="contraseniaCampo.errors.minlength">Error:La longitud minima es de 8 caractere</p>
+      <p class="error" *ngIf="contraseniaCampo.errors.required">Error:Campo requerrido</p>
+      <p class="error" *ngIf="contraseniaCampo.errors.minlength">Error:La longitud minima es de 8 caractere</p>
     </div>
   </div>
 
   <div>
     <label for="rolId">Rol </label>
-    <select name="rol" id="rolId" [(ngModel)]="rolModelo"
+    <select name="rol" id="rolId" [(ngModel)]="rolModelo" #rolCampo="ngModel"  required
     >
       <option value="1"> Administrador</option>
       <option value="2"> Profesor</option>
       <option value="3"> Estudiante</option>
     </select>
+    <div  *ngIf="rolCampo.touched&& rolCampo.errors">
+      <p class="error" *ngIf="rolCampo.errors.required">Error:Campo requerido</p>
+    </div>
   </div>
 
 
@@ -101,7 +104,7 @@
   <button *ngIf="!_authService.estaAutenticado" class="boton" type="submit" [disabled]="!formularioUsuario.form.valid">
     Registrarse
   </button>
-  <button class="boton" type="reset">
+  <button class="boton" (click)="irALogin()">
     Cancelar
   </button>
 </form>

@@ -23,9 +23,7 @@
       <td> {{curso.fechainicio}}</td>
       <td> {{curso.fechafin}}</td>
       <td>
-        <button class="boton" *ngIf="_authService.esAdmin" (click)="irAEditarcurso(curso.id)">
-          Editar
-        </button>
+
         <button class="boton" *ngIf="_authService.esAdmin" (click)="eliminarCurso(curso.id)">
           Eliminar
         </button>
