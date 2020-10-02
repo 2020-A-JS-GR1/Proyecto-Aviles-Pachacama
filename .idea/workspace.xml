@@ -21,26 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c28296e0-db78-42ab-8bc4-12fa3beabb51" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/proyecto-js/config/datastores.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/proyecto-js/config/datastores.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/proyecto-js/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/proyecto-js/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-curso/formulario-curso.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-curso/formulario-curso.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-curso/formulario-curso.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-curso/formulario-curso.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-curso/formulario-curso.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-curso/formulario-curso.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-materia/formulario-materia.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-materia/formulario-materia.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-materia/formulario-materia.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-materia/formulario-materia.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-notas/formulario-notas.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-notas/formulario-notas.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-notas/formulario-notas.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-notas/formulario-notas.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-usuario/formulario-usuario.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-usuario/formulario-usuario.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-usuario/formulario-usuario.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-usuario/formulario-usuario.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-usuario/formulario-usuario.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/componentes/formularios/formulario-usuario/formulario-usuario.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/rutas/ruta-lista-curso/ruta-lista-curso.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/rutas/ruta-lista-curso/ruta-lista-curso.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/rutas/ruta-lista-usuario/ruta-lista-usuario.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/rutas/ruta-lista-usuario/ruta-lista-usuario.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/rutas/ruta-login-usuario/ruta-login-usuario.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/rutas/ruta-login-usuario/ruta-login-usuario.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/rutas/ruta-notas-curso/ruta-notas-curso.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/rutas/ruta-notas-curso/ruta-notas-curso.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/rutas/rutas-notas-usuario/rutas-notas-usuario.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/rutas/rutas-notas-usuario/rutas-notas-usuario.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/servicios/http/curso.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/mi-proyecto/src/app/servicios/http/curso.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +82,7 @@
       <workItem from="1601509640572" duration="12791000" />
       <workItem from="1601527976089" duration="12364000" />
       <workItem from="1601581566786" duration="778000" />
-      <workItem from="1601594960214" duration="5383000" />
+      <workItem from="1601594960214" duration="6335000" />
     </task>
     <servers />
   </component>
